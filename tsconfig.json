@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "watch": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "rootDir": "typescript",
+    "outDir": "typescript/dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*", "typescript/types/*"]
+    }
+  },
+  "include": ["typescript/**/*"]
+}

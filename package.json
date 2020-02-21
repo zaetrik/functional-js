@@ -1,0 +1,27 @@
+{
+  "name": "functionaljs",
+  "version": "1.0.0",
+  "description": "Random fucntional programming stuff written in JS/TS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Cedomic/functional-js.git"
+  },
+  "author": "Cedomic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/Cedomic/functional-js/issues"
+  },
+  "homepage": "https://gitlab.com/Cedomic/functional-js#readme",
+  "dependencies": {
+    "fp-ts": "^2.5.1",
+    "ramda": "^0.27.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.4",
+    "@types/ramda": "^0.26.41"
+  }
+}
