@@ -26,11 +26,11 @@ const double = multiply(2);
 
 // pipe functions => f(g(x)) => executed from left to right
 // double the input => pass doubled input to trace("after double") => pass doubled value to inc5 => pass inc5 return value to trace("after inc5")
-const pipeDoubleThenAdd5 = pipe(
+const pipeAdd5ThenDouble = pipe(
   trace("after inc5"),
   inc5,
   trace("after double"),
   double
 );
 
-console.log(pipeDoubleThenAdd5(10)); // => (10 + 5) * 2 = 30
+console.log(pipeAdd5ThenDouble(10)); // => (10 + 5) * 2 = 30
