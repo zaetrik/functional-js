@@ -18,6 +18,7 @@
   "homepage": "https://gitlab.com/Cedomic/functional-js#readme",
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "^13.7.4"
+    "@types/node": "^13.7.4",
+    "typescript": "^3.8.3"
   }
 }
