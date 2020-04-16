@@ -1,3 +1,5 @@
 node_modules/
-typescript/dist/
+dist/
 assets/
+
+.DS_Store
