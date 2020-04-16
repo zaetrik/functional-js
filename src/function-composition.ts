@@ -103,3 +103,5 @@ const agent007 = {
   lastname: "Bond",
 };
 greetAgent(agent007); // => Moin Moin, James Bond
+
+export {};

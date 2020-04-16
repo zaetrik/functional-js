@@ -32,3 +32,5 @@ const addTwo = curriedAdd(2); // This will add two to whatever number we pass to
 
 // three :: Number
 const three = curriedAdd(1)(2);
+
+export {};

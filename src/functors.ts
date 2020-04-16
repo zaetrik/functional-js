@@ -1,10 +1,11 @@
-// A lot of this is taken from https://jrsinclair.com/articles/2019/algebraic-structures-what-i-wish-someone-had-explained-about-functional-programming/
+// Some of this is taken from https://jrsinclair.com/articles/2019/algebraic-structures-what-i-wish-someone-had-explained-about-functional-programming/
 // A 'Functor' is an algebraic structure
 // A Functor structure must have .map() method
 // map :: Functor f => f a ~> (a -> b) -> f b
 
 interface Functor<A> {
   map<B>(f: (a: A) => B): Functor<B>;
+  // Not necessary but used here to add util methods like emit()
   [x: string]: any;
 }
 
@@ -81,7 +82,50 @@ const successfulOperation = numbers.map((x) => x[2]).map((x) => x + 10); // => J
 const failedOperation = numbers.map((x) => x[5]).map((x) => x + 10); // => Nothing
 console.log(successfulOperation.emit(), failedOperation.emit());
 
-// There are a ton of other Functors that handle other things, e.g. Either
+// There are a ton of other functors that handle other things, e.g. Either
 // Either has a Left and Right value
 // This is also useful for actions that might fail
 // The benefit of Either is that we can pass along the error message in Left and if there is no error we just put the value inside of Right
+
+/**
+ *
+ * Functor Laws
+ *
+ */
+
+// Functors must obey some laws to be considered a functor
+// You can think of the laws as some kind of interface specification
+// These laws are there to make sure that we can make some assumptions abput functors
+
+/**
+ *
+ * First Law
+ * Identity
+ *
+ */
+
+// functor.map(x => x) === functor
+// If we have an identity function (x => x) .map() has to return the same functor
+
+/**
+ *
+ * Second Law
+ * Composition
+ *
+ */
+
+// functor.map(f).map(g) === u.map(x => g(f(x)))
+// Calling .map() twice with first f() and then g() should be the same as calling .map() once with g(f(x)) (the result of f(x) applied to g())
+// This makes sense if think about it. A quick more concrete example:
+
+const add = (x) => (y) => x + y;
+const addTwo = add(2);
+
+const multiply = (x) => (y) => x * y;
+const double = multiply(2);
+
+const f = MyFunctor(5);
+const doubleMap = f.map(addTwo).map(double); // => (5 + 2) * 2 = 14
+const singleMap = f.map((x) => double(addTwo(5))); // => (5 + 2) * 2 = 14
+
+export {};
