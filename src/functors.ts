@@ -3,7 +3,7 @@
 // A Functor structure must have .map() method
 // map :: Functor f => f a ~> (a -> b) -> f b
 
-interface Functor<A> {
+export interface Functor<A> {
   map<B>(f: (a: A) => B): Functor<B>;
   // Not necessary but used here to add util methods like emit()
   [x: string]: any;
@@ -65,7 +65,7 @@ const Maybe = (x): Functor<any> =>
 // When the Maybe functor contains a Nothing() value it means x is undefined or null
 // This is very useful when working with functions that may or may not return a value
 
-// Let's try the Maybe functor out
+// Let's try out the Maybe functor
 const numbers: Functor<number[]> = Maybe([1, 2, 3, 4, 5]);
 
 // Here we have a function that returns a value that is NOT null or undefined
