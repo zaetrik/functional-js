@@ -16,7 +16,10 @@
     "url": "https://gitlab.com/Cedomic/functional-js/issues"
   },
   "homepage": "https://gitlab.com/Cedomic/functional-js#readme",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.19.2",
+    "fp-ts": "^2.5.3"
+  },
   "devDependencies": {
     "@types/node": "^13.7.4",
     "typescript": "^3.8.3"
