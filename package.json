@@ -17,7 +17,7 @@
   },
   "homepage": "https://gitlab.com/Cedomic/functional-js#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "fp-ts": "^2.5.3"
   },
   "devDependencies": {
